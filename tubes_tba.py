@@ -143,7 +143,7 @@ for j in range(0,len(token)):
     try:
         count_9 = token.count(9)
         count_10 = token.count(10)
-        if (token[j] == 1 and token[j+1] == 1) or (count_9 != count_10) or ("error" in token) or ( token[0] != 1  or token[0] != 9):
+        if (token[j] == 1 and token[j+1] == 1) or (count_9 != count_10) or ("error" in token) or ( token[0] == 2 or token[0] == 2 or token[0] == 3 or token[0] == 4 or token[0] == 5 or token[0] == 7 ):
             valid = "not valid"
             break
         else:
