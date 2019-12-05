@@ -11,7 +11,7 @@ valid = "valid"
 for i in range (0,len(inputan)):
     skor = 0
     try:
-        if(inputan[i] == 'i' and inputan[i+1] == 'f' and inputan[i+2] == 'f') or (inputan[i] == 'I' and inputan[i+1] == 'F'):
+        if(inputan[i] == 'i' and inputan[i+1] == 'f' and inputan[i+2] == 'f' and inputan[i+3] == '') or (inputan[i] == 'I' and inputan[i+1] == 'F'):
             token.append(8)
             skor += 1
         elif (inputan[i] == 'f' and inputan[i-1] == 'i' and inputan[i+1] == 'f') or (inputan[i] == 'F' and inputan[i-1] == 'I' and inputan[i+1] == 'F') :
@@ -139,11 +139,11 @@ for i in range (0,len(inputan)):
         break
     
 
-for j in range(len(token)):
+for j in range(0,len(token)):
     try:
         count_9 = token.count(9)
         count_10 = token.count(10)
-        if (token[j] == 1 and token[j+1] == 1) or (count_9 != count_10) or (token[i] == "error") or ( token[0] != 1  or token[0] != 9):
+        if (token[j] == 1 and token[j+1] == 1) or (count_9 != count_10) or ("error" in token) or ( token[0] != 1  or token[0] != 9):
             valid = "not valid"
             break
         else:
