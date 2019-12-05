@@ -7,7 +7,6 @@ Created on Wed Nov 20 11:37:35 2019
 """
 inputan = input("masukkan inputan: ")
 token = []
-valid = "valid"
 for i in range (0,len(inputan)):
     skor = 0
     try:
@@ -138,12 +137,18 @@ for i in range (0,len(inputan)):
         token.append("error")
         break
     
+def is_empty(token):
+    if token:
+        return False
+    else:
+        return True
+    
 
 for j in range(0,len(token)):
     try:
         count_9 = token.count(9)
         count_10 = token.count(10)
-        if (token[j] == 1 and token[j+1] == 1) or (count_9 != count_10) or ("error" in token) or ( token[0] == 2 or token[0] == 2 or token[0] == 3 or token[0] == 4 or token[0] == 5 or token[0] == 7 ):
+        if (token[j] == 1 and token[j+1] == 1) or (count_9 != count_10) or ("error" in token) or ( token[0] == 2 or token[0] == 2 or token[0] == 3 or token[0] == 4 or token[0] == 5 or token[0] == 7 ) or is_empty(token) == True:
             valid = "not valid"
             break
         else:
